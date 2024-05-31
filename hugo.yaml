@@ -1,0 +1,47 @@
+# Hugo configuration file
+title: DOCS
+
+# import hextra as module
+module:
+  imports:
+    - path: github.com/imfing/hextra
+
+markup:
+  # allow raw html
+  goldmark:
+    renderer:
+      unsafe: true
+
+  # enable hextra syntax highlight
+  highlight:
+    noClasses: false
+
+
+menu:
+  main:
+    - name: Docs
+      pageRef: /docs
+      weight: 1
+    - name: About
+      pageRef: /about
+      weight: 2
+    - name: Contact ↗
+      url: "https://github.com/lermala"
+      weight: 3
+    - name: Search
+      weight: 4
+      params:
+        type: search
+    - name: GitHub
+      weight: 5
+      url: "https://github.com/lermala"
+      params:
+        icon: github
+
+params:
+  theme:
+    # light | dark | system
+    default: system
+    displayToggle: true
+    # full (100%), wide (90rem), normal (1280px)
+    width: full

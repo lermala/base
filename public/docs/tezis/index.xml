@@ -1,0 +1,19 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DOCS – Docs</title>
+    <link>//localhost:1313/docs/tezis/</link>
+    <description>Recent content in Docs on DOCS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 May 2024 00:34:40 +0800</lastBuildDate>
+    
+	  <atom:link href="//localhost:1313/docs/tezis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>
