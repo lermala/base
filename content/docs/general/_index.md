@@ -1,6 +1,5 @@
 ---
-title: General info
-next: first-page
+title: Общая информация
 ---
 
 This is a demo of the theme's documentation layout.

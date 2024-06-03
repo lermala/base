@@ -1,6 +1,6 @@
 ---
-title: About
+title: Об авторе
 type: about
 ---
 
-This is the about page.
+Тут кратко обо мне. Автор Валерия

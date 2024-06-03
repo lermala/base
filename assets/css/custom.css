@@ -1,0 +1,28 @@
+/* Override border-radius class to fit Clever's theme */
+.rounded,
+.rounded-xl,
+.rounded-3xl,
+.rounded-lg,
+.rounded-md,
+.rounded-sm,
+.code-block pre:not(.lntable pre),
+.code-block .filename,
+.chroma .lntable,
+.content img,
+.content div.gist-file,
+.btn-secondary,
+.btn-primary  {
+  border-radius: 0.29rem;
+}
+
+.content img {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+/* Prevent linked text to be underlined or change color.
+  Useful for beautiful cards */
+  a.no-underline {
+    text-decoration: none;
+  }
+

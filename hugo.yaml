@@ -1,5 +1,6 @@
 # Hugo configuration file
-title: DOCS
+title: База знаний (в процессе наполнения)
+languageCode: ru
 
 # import hextra as module
 module:
@@ -19,21 +20,24 @@ markup:
 
 menu:
   main:
-    - name: Docs
+    - name: База знаний (личная)
       pageRef: /docs
       weight: 1
-    - name: About
-      pageRef: /about
+    - name: База знаний ИСИБ
+      pageRef: /isib
       weight: 2
-    - name: Contact ↗
-      url: "https://github.com/lermala"
+    - name: Об авторе
+      pageRef: /about
       weight: 3
-    - name: Search
+    - name: Контакты ↗
+      url: "https://github.com/lermala"
       weight: 4
+    - name: Поиск
+      weight: 5
       params:
         type: search
     - name: GitHub
-      weight: 5
+      weight: 6
       url: "https://github.com/lermala"
       params:
         icon: github
@@ -43,5 +47,24 @@ params:
     # light | dark | system
     default: system
     displayToggle: true
+
+  page:
     # full (100%), wide (90rem), normal (1280px)
-    width: full
+    width: wide
+
+  displayUpdatedDate: true
+  dateFormat: "02.01.2006"
+
+  footer:
+      displayCopyright: true
+      displayPoweredBy: true
+      width: normal
+
+defaultContentLanguage: ru
+languages:
+  ru:
+    languageName: Russian
+    weight: 1
+  #en:
+  #  languageName: English
+   # weight: 2

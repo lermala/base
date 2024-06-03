@@ -1,17 +1,17 @@
 ---
-title: My Site
+title: База знаний
 toc: false
 ---
 
-This is the landing page.
 
-## Explore
+## Разделы
 
 {{< cards >}}
-  {{< card link="docs" title="Docs" icon="book-open" >}}
-  {{< card link="about" title="About" icon="user" >}}
+  {{< card link="docs" title="База знаний (личная)" icon="book-open" >}}
+  {{< card link="isib" title="База знаний ИСИБ" icon="book-open" >}}
+  {{< card link="about" title="Об авторе" icon="user" >}}
 {{< /cards >}}
 
-## Documentation
+## Источник
 
-For more information, visit [Hextra](https://imfing.github.io/hextra).
+Сделано на основе шаблона [Hextra](https://imfing.github.io/hextra).
