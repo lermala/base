@@ -1,5 +1,5 @@
 # Hugo configuration file
-title: База знаний (в процессе наполнения)
+title: lermala
 languageCode: ru
 
 # import hextra as module
@@ -20,12 +20,12 @@ markup:
 
 menu:
   main:
-    - name: База знаний (личная)
+    - name: База знаний
       pageRef: /docs
       weight: 1
-    - name: База знаний ИСИБ
-      pageRef: /isib
-      weight: 2
+    # - name: База знаний ИСИБ
+    #   pageRef: /isib
+    #   weight: 2
     - name: Об авторе
       pageRef: /about
       weight: 3
