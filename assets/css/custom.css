@@ -11,18 +11,25 @@
 .content img,
 .content div.gist-file,
 .btn-secondary,
-.btn-primary  {
+.btn-primary {
   border-radius: 0.29rem;
 }
 
 .content img {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+} 
+
+a.no-underline {
+  text-decoration: none;
 }
 
+.img-title {
+  text-align: center; font-style: italic; color: gray;
+}
 
-/* Prevent linked text to be underlined or change color.
-  Useful for beautiful cards */
-  a.no-underline {
-    text-decoration: none;
-  }
-
+.img-circle {
+  box-shadow: none;
+  border-radius: 50%;
+  border-color: red;
+  border: 10px;
+}

@@ -2,6 +2,8 @@
 title: lermala
 languageCode: ru
 
+enableGitInfo: true
+
 # import hextra as module
 module:
   imports:
@@ -23,21 +25,26 @@ menu:
     - name: База знаний
       pageRef: /docs
       weight: 1
-    # - name: База знаний ИСИБ
-    #   pageRef: /isib
-    #   weight: 2
-    - name: Об авторе
+    - name: Примеры работ
+      pageRef: /examples
+      weight: 2      
+    - name: Обо мне
       pageRef: /about
       weight: 3
-    - name: Контакты ↗
-      url: "https://github.com/lermala"
-      weight: 4
+    # - name: Контакты
+    #   pageRef: /contacts
+    #   weight: 4      
     - name: Поиск
       weight: 5
       params:
         type: search
-    - name: GitHub
+    - name: telegram
+      url: "https://t.me/lermala"
       weight: 6
+      params:
+        icon: telegram        
+    - name: GitHub
+      weight: 7
       url: "https://github.com/lermala"
       params:
         icon: github
@@ -55,10 +62,21 @@ params:
   displayUpdatedDate: true
   dateFormat: "02.01.2006"
 
-  footer:
-      displayCopyright: true
-      displayPoweredBy: true
-      width: normal
+  # footer:
+  #     displayCopyright: true
+  #     displayPoweredBy: true
+  #     width: normal
+
+  navbar:
+    displayTitle: true
+    displayLogo: true
+    logo:
+      path: /logo.ico
+      dark: /logo.ico
+      link: /
+      width: 38
+      height: 38
+    width: wide    
 
 defaultContentLanguage: ru
 languages:
