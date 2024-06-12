@@ -9,9 +9,10 @@ this page is my knowledge base, i want use it for:
 2. [x] create menu
 2. [ ] fill base
 3. [x] create page in github pages
-4. [ ] add portfolio
-4. [ ] add info abt me and resume
-5. [ ] add my arts to the new block (mb no?)
+4. [x] add portfolio
+4. [x] add info abt me and resume
+5. [x] add my arts to the new block (mb no?)
+6. [ ] add sql and groovy examples
 
 ## content plan
 1. [ ] add info + difgram with artefacts from [link](https://gb.ru/blog/rabota-s-proektom-ehtapy-osobennosti/)
@@ -34,6 +35,8 @@ hugo server --buildDrafts --disableFastRender
 - [example with changing assets (it can be useful for changing border-radius or for colors)](https://github.com/CleverCloud/documentation/blob/main/assets/css/custom.css)
 - [diagrams via mermaid](https://imfing.github.io/hextra/docs/guide/diagrams/)
 - [custom CSS](https://imfing.github.io/hextra/docs/advanced/customization/)
+- [icons codes with preview](https://v1.heroicons.com) and [list of all icons in hextra](https://github.com/imfing/hextra/blob/main/data/icons.yaml)
+- [the best example hextra site](https://github.com/CleverCloud/documentation/tree/main)
 
 
 ## Как сделать такой же сайт
