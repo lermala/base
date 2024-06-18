@@ -31,12 +31,18 @@ weight: 60
 
 Делала в рамках хакатона, поэтому макетов совсем немного.
 
-![alt text](image-1.png)
+![alt text](image-7.png)
 
 Подробнее: https://www.figma.com/design/u1gFq4j1UTSBpq1n85laQX/Untitled?node-id=0-1&t=wKpTzgNA3cSM7qYc-1
 
-<!-- ## Сайт для компании
+## Сайт для компании
 
-...
+Делала как внутреннюю задачу:
 
-Я же потом его собрала на конструкторе Tilda. Ссылка на сайт: -->
+![alt text](image-5.png)
+
+![alt text](image-6.png)
+
+Подробнее: https://www.figma.com/design/tCziI6KnBdygMiaoxIurhF/%D0%9C%D0%B0%D0%BA%D0%B5%D1%82-%D0%98%D0%A1%D0%98%D0%91?node-id=0-1&t=1OZSXUsj330xewbl-1
+
+Я же потом его собрала на конструкторе Tilda. Ссылка на сайт: https://megamaster38.tilda.ws 
