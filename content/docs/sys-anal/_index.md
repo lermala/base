@@ -14,3 +14,4 @@ weight: 20
 - [System Analyst | Knowledge base](https://docs.system-analyst-base.ru)
 - [Учебный курс для бизнес-аналитиков](https://datafinder.ru/products/uchebnyy-kurs-dlya-biznes-analitikov)
 - [Выявление и сбор требований к ПО — ultimate guide](https://tproger.ru/articles/vyjavlenie-i-sbor-trebovanij-k-po-ultimate-guide)
+- [Что нужно знать системному аналитику уровня Middle и Senior: план развития Hard Skills / Habr](https://habr.com/ru/articles/692580)

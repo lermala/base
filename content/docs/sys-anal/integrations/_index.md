@@ -26,6 +26,7 @@ weight: 500
 - На основе [Java Microservices: The Basics](https://www.marcobehler.com/guides/java-microservices-a-practical-guide#_java_microservices_the_basics) и его [перевода](https://javarush.com/groups/posts/2660-rukovodstvo-po-mikroservisam-java-chastjh-1-osnovih-mikroservisov-i-ikh-arkhitektura)
 - Об архитектуре ПО и других видах ИТ-архитектур [От монолита до микросервисов: как устроена архитектура ПО](https://blog.skillfactory.ru/ot-monolita-do-mikroservisov-kak-ustroena-arhitektura-po)
 - [Монолит или микросервисы: какую архитектуру выбрать для нового проекта](https://tproger.ru/articles/monolit-ili-mikroservisy--kak-vybrat-arhitekturu-dlya-novogo-proekta)
+- [Microservice Architecture Microservices.io](https://microservices.io/index.html)
 
 ### Монолит
 
@@ -72,7 +73,7 @@ weight: 500
 
 ### Интеграционные форматы
 
-#### JSON
+#### JSON + JSON Schema
 #### XML + XSD
 
 
@@ -87,6 +88,11 @@ weight: 500
 Схема взаимодействия
 
 ![alt text](image.png)
+
+### Пагинация
+Что почитать:
+- [Оптимизация работы с REST API: когда и как использовать пагинацию](https://selectel.ru/blog/pagination)
+- [Реализация REST API-метода с пагинацией на примере JSON-Schema и OpenAPI / Habr/ nick_oldman](https://habr.com/ru/amp/publications/846130)
 
 ## Вопросы и ответы
 56.   Что такое XSD?
