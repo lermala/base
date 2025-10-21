@@ -33,3 +33,16 @@ a.no-underline {
   border-color: red;
   border: 10px;
 }
+
+.content table,
+.content table td,
+.content table th {
+  vertical-align: top;
+} 
+
+.content table img,
+.content table td img,
+.content table th img {
+  border-radius: 0;
+  box-shadow: none;
+} 
