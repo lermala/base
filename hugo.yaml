@@ -8,6 +8,8 @@ enableGitInfo: true
 module:
   imports:
     - path: github.com/imfing/hextra
+    - path: github.com/hugomods/kroki # for plantUML supporting
+    #- path: github.com/hbstack/kroki # for plantUML supporting
 
 markup:
   # allow raw html
@@ -85,4 +87,4 @@ languages:
     weight: 1
   #en:
   #  languageName: English
-   # weight: 2
+  # weight: 2
