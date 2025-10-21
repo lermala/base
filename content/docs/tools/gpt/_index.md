@@ -2,6 +2,7 @@
 title:  GPT в аналитике
 weight: 500
 ---
+Библиотека промтов для ChatGPT на русском языке https://prompt1.ru/
 
 ## Формализация требований
 ### User story

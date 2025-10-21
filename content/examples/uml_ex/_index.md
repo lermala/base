@@ -152,7 +152,116 @@ deactivate sed
 {{% /details %}}
 
 ## Диаграммы прецендентов
+### СЭД. Общий функционал
+![alt text](image-9.png)
+{{% details title="PlantUML" closed="true" %}}
+```yaml
+@startuml
+left to right direction
+skinparam packageStyle rectangle
 
+actor "Пользователь" as User
+
+rectangle "СЭД. Общие функции" {
+    (Авторизоваться) as UC_Auth
+    (Зайти по\nделегированию) as UC_Delegate
+    (Открыть карточку*) as UC_Open
+    (Посмотреть список\nдоступных карточек*) as UC_Watch
+    (Создать карточку*) as UC_Create
+    (Создать карточку\nна основании) as UC_CreateSub
+    (Создать карточку\nпо шаблону) as UC_CreateByTemplate
+    (Создать шаблон\nкарточки*) as UC_CreateTemplate
+    (Вывести список\nв Excel) as UC_Excel
+    (Найти карточку*) as UC_Search
+    (Найти карточку\nпо атрибутам) as UC_SearchAttr
+    (Найти карточку\nпо тексту) as UC_SearchFts
+    (Оставить\nкомментарий\nв карточке*) as UC_Comment
+    (Получить уведомление) as UC_RecieveNotif
+
+    note right of (UC_Open) 
+        Под __**карточкой**__ здесь и далее подразумеваются:
+        * для просмотра - все доступные карточки
+        в рамках группы доступа
+        * для создания - все доступные типы карточек 
+        (ОГ, МУ, документы, поручения) в рамках ролей
+    endnote
+}
+
+' Связи акторов с прецедентами
+User -- UC_Auth
+User -- UC_Delegate
+User -- UC_Create
+User -- UC_CreateTemplate
+User -- UC_Watch
+User -- UC_Search
+User -- UC_Open
+User -- UC_Comment
+User -- UC_RecieveNotif
+
+' Вложенные связи
+UC_Watch ..> UC_Excel : <<extend>>
+UC_Search ..> UC_SearchAttr : <<extend>>
+UC_Search ..> UC_SearchFts : <<extend>>
+UC_Create ..> UC_CreateSub : <<extend>>
+UC_Create ..> UC_CreateByTemplate : <<extend>>
+
+@enduml
+``` 
+{{% /details %}}
+### СЭД. Работа с МУ
+![alt text](image-8.png)
+
+{{% details title="PlantUML" closed="true" %}}
+```yaml
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Делопроизводитель" as Secretary
+actor "Исполнитель (СПА)" as Executor
+
+Secretary -|> Executor
+
+rectangle "СЭД. Блок МУ" {
+    (Получить Вх.МУ с сайта) as UC_CreateFromSite
+    (Создать Вх.МУ) as UC_Create
+    (Зарегистрировать Вх.МУ) as UC_Register
+    (Редактировать Вх.МУ) as UC_Update
+    (Поручить\nотв. исполнителю) as UC_SendToWork
+    (Проверить ответ\nИсх.МУ) as UC_Check
+
+    (Отправить на доработку) as UC_SendToRemake
+    (Принять поручение) as UC_ApproveTask
+
+    (Подготовить ответ\n =выполнить поручение) as UC_Execute
+    (Отправить на\nсогласование) as UC_Send
+    (Создать Исх.МУ) as UC_CreateResponse
+    (Сделать запрос\nв СПА/Организацию) as UC_Request
+    (Сделать\nмежведомственный\nзапрос) as UC_RequestSmev
+}
+
+' Связи акторов с прецедентами
+Secretary -- UC_Create
+Secretary -- UC_Register
+Secretary -- UC_SendToWork
+Secretary -- UC_Check
+Secretary -- UC_CreateFromSite
+
+Executor -- UC_Execute
+Executor -- UC_Request
+Executor -- UC_RequestSmev
+
+' Вложенные связи
+UC_Create ..> UC_Update : <<extend>>
+UC_Check ..> UC_ApproveTask : <<extend>>
+UC_Check ..> UC_SendToRemake : <<extend>>
+UC_Execute <.. UC_CreateResponse : <<include>>
+UC_Execute <.. UC_Send : <<include>>
+
+@enduml
+
+``` 
+{{% /details %}}
 
 ## Диаграммы состояний
 ### Публикация МПА
@@ -286,6 +395,53 @@ state inProcess {
 registered -> [*] : обработка завершена успешно
 inProcess --> rejected : [процесс\nотменен]
 rejected -> [*] : обработка\nотменена
+
+@enduml
+``` 
+{{% /details %}}
+
+## Диаграммы активностей
+### Алгоритм работы нумератора
+Алгоритм формирования регистрационного номера документов, ОГ, МУ
+
+![alt text](image-7.png)
+
+{{% details title="PlantUML" closed="true" %}}
+```yaml
+@startuml
+
+title "Формирование регистрационного номера документов, ОГ, МУ"
+
+start
+
+:regNo="" (рег. номер);
+floating note left : Формат нумератора:\n[префикс][номер]/[код подразделения]/[год]\nПримеры: Вх-1/07/22, Ис.ОГ-1/07/22
+:regNo += префикс;
+:regNo += getNextNum();
+note left 
+    **Важно!** Номер формируется в рамках
+    **подразделения и вида документа.**
+
+    У каждого подразделения свой 
+    порядок документов.
+endnote
+:regNo += разделитель (/);
+
+if (Код подразделения указан?) then (Да)
+    if (Канцелярский вид документа) then (Входящий)
+    :подразделение = адресат;
+    else (Исходящий)
+        :подразделение = отправитель;
+    endif
+    :regNo += код подразделения;
+else (Нет)
+    :regNo += код организации;
+endif
+
+:regNo += разделитель (/);
+:regNo += год создания в формате YY;
+
+stop
 
 @enduml
 ``` 

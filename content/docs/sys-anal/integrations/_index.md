@@ -72,10 +72,206 @@ weight: 500
 #### SOAP
 
 ### Интеграционные форматы
+Онлайн конвертеры:
+- [XML -> XSD](https://www.liquid-technologies.com/online-xml-to-xsd-converter) и [XSD -> XML](https://www.liquid-technologies.com/online-xsd-to-xml-converter)
+- [JSON -> JSON Schema](https://www.liquid-technologies.com/online-json-to-schema-converter) и [JSON Schema -> JSON](https://www.liquid-technologies.com/online-schema-to-json-converter)
 
 #### JSON + JSON Schema
-#### XML + XSD
 
+```json
+{
+    "user": {
+        "id": 12345,
+        "name": "Иван Петров",
+        "email": "ivan.petrov@example.com",
+        "isActive": true,
+        "createTs": "2025-10-19T22:15:00Z",
+        "hobbies": [
+            "чтение",
+            "рисование"
+        ],
+        "accounts": [
+            {
+                "type": "savings",
+                "balance": 12500.75,
+                "currency": "RUB"
+            },
+            {
+                "type": "credit",
+                "balance": -3400.50,
+                "currency": "RUB"
+            }
+        ]
+    }
+}
+```
+
+```json
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "user": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "isActive": {
+                    "type": "boolean"
+                },
+                "createTs": {
+                    "type": "string"
+                },
+                "hobbies": {
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "accounts": {
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "balance": {
+                                    "type": "number"
+                                },
+                                "currency": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "type",
+                                "balance",
+                                "currency"
+                            ]
+                        },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "balance": {
+                                    "type": "number"
+                                },
+                                "currency": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "type",
+                                "balance",
+                                "currency"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "email",
+                "isActive",
+                "createTs",
+                "hobbies",
+                "accounts"
+            ]
+        }
+    },
+    "required": [
+        "user"
+    ]
+}
+```
+
+#### XML + XSD
+[Что такое XML](https://habr.com/ru/articles/524288)
+
+Из чего состоит XSD?
+Основные объекты, из которых состоит XSD-схема:
+- элементы (зелёный цвет);
+- типы (синий);
+- индикаторы порядка (красный).
+
+```xml
+<user>
+    <id>12345</id>
+    <name>Иван Петров</name>
+    <email>ivan.petrov@example.com</email>
+    <isActive>true</isActive>
+    <createTs>2025-10-19T22:15:00Z</createTs>
+
+    <hobbies>
+        <hobby>чтение</hobby>
+        <hobby>рисование</hobby>
+    </hobbies>
+
+    <accounts>
+        <account type="savings" currency="RUB">
+            <balance>12500.75</balance>
+        </account>
+        <account type="credit" currency="RUB">
+            <balance>-3400.50</balance>
+        </account>
+    </accounts>
+</user>
+```
+
+```xsd
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="user">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="id" type="xs:unsignedShort" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="isActive" type="xs:boolean" />
+        <xs:element name="createTs" type="xs:dateTime" />
+        <xs:element name="hobbies">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="hobby" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="accounts">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="account">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="balance" type="xs:decimal" />
+                  </xs:sequence>
+                  <xs:attribute name="type" type="xs:string" use="required" />
+                  <xs:attribute name="currency" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+```
 
 ### Синхронная и асинхронная интеграция
 
@@ -86,7 +282,6 @@ weight: 500
 Различия их в том, что приложения с асинхронным взаимодействием не ждут ответа после отправки запроса, а могут продолжить выполнять свой основной поток задач.
 
 Схема взаимодействия
-
 ![alt text](image.png)
 
 ### Пагинация
