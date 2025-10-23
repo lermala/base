@@ -1,5 +1,5 @@
 ---
-title: SQL и БД
+title: SQL
 weight: 1000
 ---
 
