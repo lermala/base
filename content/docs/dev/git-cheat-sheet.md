@@ -80,6 +80,17 @@ git reset --hard [хеш_коммита]
 git commit --amend -m "Новое название коммита"
 ```
 
+### Удалить коммит
+Удалить локальный коммит:
+```bash
+git branch -d  local_branch_name
+```
+
+Удалить remote ветку:
+```bash
+git push remote_name -d remote_branch_name
+```
+
 ### Удаление и отмена коммитов
 Все способы подробно описаны в справке, например вот как в [IntelliJ IDEA](https://www.jetbrains.com/help/idea/2021.1/undo-changes.html)
 
