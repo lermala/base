@@ -1,6 +1,8 @@
 ---
 title:  Примеры презентаций
-weight: 70
+draft: true
+# hidden: true
+# draft: true
 ---
 
 ## Основы REST API
