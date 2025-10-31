@@ -1,9 +1,11 @@
 ---
 title: Принципы хорошего REST-дизайна
-weight: 500
+weight: 5000
 ---
 
-Конспект на основе книги [Web API Design. Crafting Interfaces that Developers Love / Brian Mulloy](https://robinwinslow.uk/api-design-ebook-2012-03.pdf)
+## Введение
+
+Тут конспект на основе книги [Web API Design. Crafting Interfaces that Developers Love / Brian Mulloy](https://robinwinslow.uk/api-design-ebook-2012-03.pdf)
 
 Что почитать:
 - [Web API Design. Crafting Interfaces that Developers Love / Brian Mulloy](https://robinwinslow.uk/api-design-ebook-2012-03.pdf)
