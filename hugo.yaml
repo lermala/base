@@ -70,9 +70,9 @@ params:
     displayTitle: true
     displayLogo: true
     logo:
-      path: /logo.ico
-      dark: /logo.ico
-      link: /
+      path: logo.ico
+      # dark: /logo.ico
+      # link: /
       width: 38
       height: 38
     width: wide    
