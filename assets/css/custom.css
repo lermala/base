@@ -23,17 +23,6 @@ a.no-underline {
   text-decoration: none;
 }
 
-.img-title {
-  text-align: center; font-style: italic; color: gray;
-}
-
-.img-circle {
-  box-shadow: none;
-  border-radius: 50%;
-  border-color: red;
-  border: 10px;
-}
-
 .content table,
 .content table td,
 .content table th {
@@ -46,3 +35,23 @@ a.no-underline {
   border-radius: 0;
   box-shadow: none;
 } 
+
+
+/* Уменьшаем вертикальные отступы в тексте */
+.content p {
+  /*margin-top: 1em !important;*/
+  line-height: 1.5 !important;
+}
+
+/* Если нужно ещё ближе прижатый вариант */
+.content li {
+  margin-top: 0.25em !important;
+  margin-bottom: 0.25em !important;
+  line-height: 1.35 !important; 
+}
+
+/* Убираем зазор между абзацем и следующим списком */
+.content p + ul,
+.content p + ol {
+  margin-top: 0.75em !important; /* убираем верхний отступ у списка */
+}

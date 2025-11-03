@@ -59,6 +59,7 @@ params:
 
   displayUpdatedDate: true
   dateFormat: "02.01.2006"
+  externalLinkDecoration: true
 
   # footer:
   #     displayCopyright: true
