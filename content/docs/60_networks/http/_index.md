@@ -4,11 +4,14 @@ weight: 50
 ---
 
 ## Введение
-Что почитать:
 
+Что почитать:
 - Основное о протоколе с примерами [Что такое HTTP и зачем он нужен](https://skillbox.ru/media/code/chto-takoe-http-i-zachem-on-nuzhen/?utm_source=media&utm_medium=link&utm_campaign=all_all_media_links_links_articles_all_all_skillbox)
 - [Хабр, Андрей Созыкин | Протокол HTTP](https://habr.com/ru/articles/813395)
+
+Полезные ссылки:
 - [Список кодов состояния HTTP](https://ru.wikipedia.org/wiki/Список_кодов_состояния_HTTP)
+
 
 ## Основное
 

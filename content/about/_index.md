@@ -8,7 +8,7 @@ type: about
 
 - **Резюме** с моим опытом можно посмотреть и скачать по [ссылке](https://drive.google.com/file/d/1MtXn21gXXs3fYGf7KxJEfuY3WRjsAFGJ/preview).
 
-- **Портфолио** моих работ можно посмотреть [тут](../docs/examples/) (примеры документации, схем bpmn, макеты интерфейсов).
+- **Портфолио** моих работ можно посмотреть [в разделе "Примеры работ"](../docs/examples/) (примеры документации, схем bpmn, макеты интерфейсов).
 
 - Карту моего опыта (**навыки и инструменты**) можно посмотреть [по ссылке xmind](https://app.xmind.com/share/Bt1L1uqQ?xid=3NQnepHK) или [в формате pdf](https://drive.google.com/file/d/1S03nQmsad-wXyuqvAmTChjL8HLi-x48b/view?usp=sharing).
 
@@ -109,9 +109,9 @@ API, руководства пользователя и администрато
 - В месяц окончания стажировки заняла 2-е место в своем отделе (по количеству зарегистрированных обращений, по количеству закрытых обращений и по
 среднему времени обработки), далее в течение следующих 3-х месяцев занимала 1-е место в отделе.
 
-> [!note]
-> Это была подработка, совмещала с очной учебой в ВУЗе.
-
+{{< callout type="info" >}}
+Это была подработка, совмещала с очной учебой в ВУЗе.
+{{< /callout >}}
 
 ## Мои навыки
 На карте отобразила навыки, которые имею на текущий момент. Серым отметила то, что использовала в учебных/личных целях.
@@ -121,7 +121,7 @@ API, руководства пользователя и администрато
 Если не отображается, то карта в формате pdf [доступна по ссылке](https://drive.google.com/file/d/1S03nQmsad-wXyuqvAmTChjL8HLi-x48b/view?usp=sharing).
 
 ## Образование
-### Образование
+### Бакалавриат
 
 2019-2022 г. окончила бакалавриат по специальности "Информационные системы и технологии" с отличием в [Иркутском политехе (ИРНИТУ)](https://www.istu.edu).
 
@@ -145,35 +145,41 @@ API, руководства пользователя и администрато
 Ниже более подробно по некоторым пунктам.
 
 ### Программирование
-У меня есть два сайта, на которых я изучала веб-разработку и одно android-приложение, которое делала в рамках диплома.
+
+Это мое хобби еще с ВУЗа :). Ниже мои самые жизнеспособные работы:
 
 {{< cards >}}
   {{< card link="https://lermala.github.io/wheel_of_life/" title="Сайт для создания колеса баланса, 2022" subtitle="Колесо баланса - техника оценки сбалансированности жизни, секторы круга - это сферы жизни." image="/images/site-wheel.png" method="Fill" options="1000x800 webp q80 BOTTOM" >}}
 
-  {{< card link="https://lermala.github.io/5_game/" title="Сайт-игра, в которой нужно ловить еду, 2022" subtitle="Сделано в каестве изучения js и пиксельной анимации." image="/images/site-game.png" method="Fill" options="1000x800 webp q80 CENTER" >}}
+  {{< card link="https://lermala.github.io/5_game/" title="Сайт-игра, в которой нужно ловить еду, 2022" subtitle="Сделано в качестве изучения js и пиксельной анимации." image="/images/site-game.png" method="Fill" options="1000x800 webp q80 CENTER" >}}
 
   {{< card link="https://github.com/lermala/MobileStylist" title="Мобильное приложение для стилиста, 2021-2022" subtitle="Хранение фото одежды и создание коллажей (проектирование+mvp в рамках диплома)." image="/images/site-mobile.png" method="Fill" options="1000x800 webp q80 LEFT" >}}
 {{< /cards >}}
 
-### Рисование
-Также я увлекаюсь рисованием. Я училась рисовать сама, ниже есть примеры моих работ
+### Рисование и творчество
+
+Люблю самое разное творчество и рисование. Всему училась сама, ниже мои любимые работы.
 
 {{< cards >}}
   {{< card link="/" title="Влюбленные" subtitle="Акрил, 2023" image="/images/inloved.png" method="Fill" options="600x750 webp q80 Top" >}}
-
   {{< card link="/" title="Рождение" subtitle="Акрил, 2023" image="/images/birth.png" method="Fill" options="600x750 webp q80 Center" >}}
+{{< /cards >}}
 
-<!--   {{< card link="/" title="Безумие" subtitle="Акрил, 2023" image="/images/madness.png" method="Fill" options="600x750 webp q80 Center" >}}
+Помимо рисования люблю пробовать разные виды творчества:
 
-  {{< card link="/" title="Смена дня и ночи" subtitle="Акрил, май 2024" image="/images/sun-and-moon.png" method="Fill"options="600x750 webp q80 Center" >}}
+{{< cards >}}
 
-  {{< card link="/" title="Икона (семистрельная без стрел)" subtitle="Акрил, фев 2024" image="/images/icon7.png" method="Fill" options="600x750 webp q80 Center" >}}
-  
-  {{< card link="/" title="Ангелы" subtitle="Акрил, 2023" image="/images/angels.png" method="Fill" options="600x750 webp q80 Bottom" >}} -->
+  {{< card title="Лепка из глины" image="/glina.jpg" subtitle="Это подставки для фото из полимерной глины " method="Fill" options="1000x800 webp q80 LEFT" >}}
+  {{< card title="Ёлочные игрушки" image="/snake.jpg" subtitle="Эту змейку делала из ваты и клея" method="Fill" options="1000x800 webp q80 LEFT" >}}
+  {{< card title="Скрапбукинг" image="/sb_red.png" subtitle="Оформляю коллажи в альбоме/тетради для расслабления" method="Fill" options="1000x800 webp q80 LEFT" >}}
+  {{< card title="«Мусорный» скрапбукинг" image="/sb_pink.jpg" subtitle="Тоже коллажи, но из \"мусора\": упаковки, визитки, этикетки" method="Fill" options="1000x800 webp q80 LEFT" >}}
+<!--   {{< card title="Лепка из глины" image="/minivalley.jpg" subtitle="Домики для суккулентов тоже из полимерной глины" method="Fill" options="1000x800 webp q80 LEFT" >}} -->
 
 {{< /cards >}}
+
+
 
 Также одно время очень увлекалась пиксель-артом, но совсем немного:
 
 <img src="my-room.gif"/>
-<img src="smoke_cat.gif" width="300"/>
+<!-- <img src="smoke_cat.gif" width="300"/> -->

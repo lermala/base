@@ -1,5 +1,5 @@
 ---
-title: 🗃️ Базы данных и SQL
+title: Базы данных и SQL
 weight: 40
 ---
 
