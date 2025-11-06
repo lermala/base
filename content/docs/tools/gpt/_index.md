@@ -1,6 +1,7 @@
 ---
 title:  GPT в аналитике
 weight: 500
+draft: true
 ---
 Библиотека промтов для ChatGPT на русском языке https://prompt1.ru/
 

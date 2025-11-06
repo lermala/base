@@ -11,15 +11,7 @@ toc: false
   База знаний в процессе наполнения, поэтому часть контента отсутствует.
 {{< /callout >}}
 
-<!-- <p class="img-title">Примерно так выглядит мое рабочее место</p> -->
-
-
 ## Разделы
-<!-- 
-{{< cards >}}
-  {{< card link="docs" title="База знаний" icon="book-open" >}}
-  {{< card link="about" title="Об авторе" icon="user" >}}
-{{< /cards >}} -->
 
 {{< cards >}}
   {{< card link="docs" title="База знаний" subtitle="Системная аналитика и все, что с ней связано" image="/images/sys-logo.gif" method="Fill" options="350x250 webp q80 Top" >}}
