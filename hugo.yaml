@@ -1,6 +1,15 @@
 # Hugo configuration file
 title: lermala
 languageCode: ru
+locale: ru
+defaultContentLanguage: ru
+languages:
+  ru:
+    languageName: Russian
+    weight: 1
+  #en:
+  #  languageName: English
+  # weight: 2
 
 enableGitInfo: true
 
@@ -28,7 +37,10 @@ menu:
     #   weight: 1
     - name: Примеры работ
       pageRef: /examples
-      weight: 2      
+      weight: 2 
+    #- name: glossary
+    #  pageRef: /glossary
+    #  weight: 1             
     - name: Обо мне
       pageRef: /about
       weight: 3   
@@ -76,12 +88,3 @@ params:
       width: 38
       height: 38
     width: wide    
-
-defaultContentLanguage: ru
-languages:
-  ru:
-    languageName: Russian
-    weight: 1
-  #en:
-  #  languageName: English
-  # weight: 2
