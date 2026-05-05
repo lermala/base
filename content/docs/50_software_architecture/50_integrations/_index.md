@@ -1,7 +1,6 @@
 ---
 title: Интеграции и API
-weight: 50
-draft: true
+weight: 1050
 ---
 
 ## Введение

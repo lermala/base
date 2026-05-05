@@ -1,0 +1,12 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <!-- ...служебные данные... -->
+    </soap:Header>
+    <soap:Body>
+        <!-- ...основной запрос или ответ... -->
+        
+        <soap:Fault>
+            <!-- ...ошибка (если есть)... -->
+        </soap:Fault>
+    </soap:Body>
+</soap:Envelope>
