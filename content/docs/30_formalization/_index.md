@@ -3,6 +3,8 @@ title: Моделирование
 weight: 30
 ---
 
+
+
 ## Введение
 
 Полезные ссылки:
@@ -65,97 +67,11 @@ weight: 30
   Карта моделей в процессе наполнения
 {{< /callout >}}
 
-
-<!-- Для удобства перенесла ее в сайт и добавила ссылки: -->
-
-<!-- 
-```mermaid
-%%{init:{
-  "theme": "base",
-  "flowchart":{"nodeSpacing":10,"rankSpacing":15}
-}}%%
-flowchart TB
-  Root(["Какой  инструмент  подойдет"])
-
-  Root ---|Люди и роли| People
-  Root ---|Бизнес| Business
-  Root ---|Требования и цели| Req
-  Root ---|Система| System
-  Root ---|Данные / Предметная область| Data
-
-  %% ===== ЛЮДИ И РОЛИ =====
-  subgraph People["Люди и роли"]
-  direction LR
-  P1(["Оргструктура"])
-  P2(["Радарная<br/>диаграмма"])
-  P3(["Матрица<br/>ответственности"])
-  P4(["Матрица<br/>стейкхолдеров"])
-  P5(["Use Cases<br/>(UML)"])
-  P6(["Иерархия ролей"])
-  P7(["Матрица ролей<br/>и прав"])
-  end
-
-  %% ===== БИЗНЕС =====
-  subgraph Business["Бизнес"]
-  direction LR
-  B1(["Оргструктура"])
-  B2(["Матрица ролей<br/>и прав"])
-  B3(["BPMN"])
-  B4(["eEPC"])
-  B5(["Activity<br/>diagram (UML)"])
-  end
-
-  %% ===== ТРЕБОВАНИЯ И ЦЕЛИ =====
-  subgraph Req["Требования и цели"]
-    direction LR
-    R1(["Модель<br/>бизнес-целей"])
-    R2(["Дерево<br/>функций"])
-    R3(["Матрица<br/>соответствия<br/>требований"])
-    R4(["User Story"])
-    R5(["Use Cases<br/>(UML)"])
-    R6(["Варианты<br/>использования"])
-    R7(["Activity<br/>diagram (UML)"])
-    R8(["Функциональные<br/>— см. «Система»"])
-    R9(["Нефункциональные<br/>требования"])
-  end
-
-  %% ===== СИСТЕМА =====
-  subgraph System["Система"]
-  direction LR
-    S1(["Communication<br/>diagram (UML)"])
-    S2(["C4"])
-    S3(["Sequence<br/>diagram (UML)"])
-    S4(["BPMN"])
-    S5(["Activity<br/>diagram (UML)"])
-    S6(["Дерево решений"])
-    S7(["Блок-схема"])
-    S8(["State<br/>diagram (UML)"])
-    S9(["Таблица<br/>состояний"])
-    S10(["Use Cases<br/>(UML)"])
-    S11(["Варианты<br/>использования"])
-    S12(["Карта экранов"])
-    S13(["Wireframe"])
-    S14(["Поток интерфейсов<br/>(RML)"])
-  end
-
-  %% ===== ДАННЫЕ / ПРЕДМЕТНАЯ ОБЛАСТЬ =====
-  subgraph Data["Данные / Предметная область"]
-  direction LR
-  D1(["Словарь данных"])
-  D2(["Ментальная карта"])
-  D3(["Концептуальная<br/>карта"])
-  D4(["ER-диаграмма"])
-  D5(["Class<br/>diagram (UML)"])
-  D6(["State<br/>diagram (UML)"])
-  D7(["Таблица<br/>состояний"])
-  end
-
-  %% === ССЫЛКИ ===
-  click S2 "/docs/30_formalization/c4/" "Open this in a new tab" _blank
-  click S3 "/docs/30_formalization/uml/"
-``` -->
-
-
-<!-- {{< callout >}}
-  Если блок подчеркнут, то **это ссылка**. Кликаем на него для подробной инфо.
-{{< /callout >}} -->
+{{< cards >}}
+  {{< card link="c4" title="C4" icon="cube" >}}
+  {{< card link="rml" title="RML" icon="code" >}}
+  {{< card link="bpmn" title="BPMN" icon="share" >}}
+  {{< card link="uml" title="UML" icon="beaker" >}}
+  {{< card link="epc" title="EPC" icon="refresh" >}}
+  {{< card link="erd" title="ER-диаграммы" icon="table" >}}
+{{< /cards >}}

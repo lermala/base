@@ -93,20 +93,20 @@ Notion - очень многофункциональный сервис. Я ис
 
 - Просмотр информации о собеседованиях. Я настроила себе таблицу, канбан-доску и календарь:
 
-{{< tabs items="Таблица,Канбан,Календарь" >}}
+{{< tabs >}}
 
-  {{< tab >}} ![alt text](image-1.png){{< /tab >}}
-  {{< tab >}} ![alt text](image-2.png){{< /tab >}}
-  {{< tab >}} ![alt text](image-3.png){{< /tab >}}
+  {{< tab name="Таблица">}} ![alt text](image-1.png){{< /tab >}}
+  {{< tab name="Канбан">}} ![alt text](image-2.png){{< /tab >}}
+  {{< tab name="Календарь">}} ![alt text](image-3.png){{< /tab >}}
 
 {{< /tabs >}}
 
 - Список желаний
 
-{{< tabs items="Галерея,Таблица" >}}
+{{< tabs >}}
 
-  {{< tab >}} ![alt text](image-4.png){{< /tab >}}
-  {{< tab >}} ![alt text](image-5.png){{< /tab >}}
+  {{< tab name="Галерея">}} ![alt text](image-4.png){{< /tab >}}
+  {{< tab name="Таблица">}} ![alt text](image-5.png){{< /tab >}}
 
 {{< /tabs >}}
 

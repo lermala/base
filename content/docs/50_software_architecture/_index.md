@@ -4,6 +4,17 @@ weight: 50
 # draft: true
 ---
 
+{{< cards >}}
+  {{< card link="monolith" title="Монолит" icon="cube" >}}
+  {{< card link="microservices" title="Микросервисы" icon="share" >}}
+  {{< card link="api" title="Интеграции и API" icon="code" >}}
+<!--     {{< card link="rest-json" title="REST + JSON" icon="code" >}}
+  {{< card link="soap-xml" title="SOAP + XML" icon="document" >}}
+  {{< card link="api-design" title="Проектирование API" icon="pencil" >}}
+  {{< card link="rest-principles" title="Принципы REST-дизайна" icon="book-open" >}} -->
+{{< /cards >}}
+
+
 ## Введение
 
 Знать

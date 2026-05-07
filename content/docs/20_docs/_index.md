@@ -208,8 +208,9 @@ weight: 20
 ## Скачать шаблоны
 
 Шаблоны:
-- [Скачать шаблон SRS (на англ.)](/doc-templates/srs_template.doc)
+- [Скачать шаблон Управления требованиями (на англ.)](/doc-templates/change_control.docx). Подробнее о шаблоне в разделе [Управление требованиями]({{< relref "docs/10_requirements/req-management/#шаблон-процесса-управления-требования" >}})
 - [Скачать шаблон Use Case (на англ.)](/doc-templates/use_case_template.doc)
+- [Скачать шаблон SRS (на англ.)](/doc-templates/srs_template.doc)
 - SRS-Template — готовый шаблон (Markdown), который можно адаптировать [Github jam01/SRS-Template](https://github.com/jam01/SRS-Template)
 - [Спецификация требований к ПО для Smart School System на русском](https://www.studocu.com/ru/document/english-international-school-moscow/english-language/shablon-srs-efs/107921116?utm_source=chatgpt.com)
 - [Скачать шаблон ТЗ/ЧТЗ по ГОСТ_34.602](/doc-templates/ТЗ_ГОСТ_34.602_шаблон.docx)

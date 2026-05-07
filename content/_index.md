@@ -14,7 +14,7 @@ toc: false
 ## Разделы
 
 {{< cards >}}
-  {{< card link="docs" title="База знаний" subtitle="Системная аналитика и все, что с ней связано" image="/images/sys-logo.gif" method="Fill" options="350x250 webp q80 Top" >}}
-
+  {{< card link="docs" title="База знаний" subtitle="Статьи по системной аналитике" image="/images/sys-logo.gif" method="Fill" options="350x250 webp q80 Top" >}}
+  {{< card link="docs/glossary" title="Глоссарий" subtitle="Словарь IT-терминов" image="/images/book.gif" method="Fill" options="350x250 webp q80 Center" >}}
   {{< card link="about" title="Обо мне" subtitle="Кто я, мой опыт, увлечения" image="/images/lermala.jpg" method="Fill" options="350x250 webp q80 Top" >}}
 {{< /cards >}}
