@@ -12,7 +12,7 @@ weight: 150
 - [Монолит или микросервисы: какую архитектуру выбрать для нового проекта](https://tproger.ru/articles/monolit-ili-mikroservisy--kak-vybrat-arhitekturu-dlya-novogo-proekta)
 - [Microservice Architecture Microservices.io](https://microservices.io/index.html)
 
-## Вопросы и ответы
+Вопросы и ответы
 - [ ] Приходилось ли вам проектировать взаимодействие информационных систем?
 - [ ] Что такое корпоративная шина? Приходилось ли работать с корпоративной шиной?
 - [ ] Чем корпоративная шина отличается от ETL – инструмента?
