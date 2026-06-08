@@ -1,0 +1,261 @@
+openapi: 3.0.1
+info:
+  title: Интеграция с СЭД Тезис-СЭД Дело
+  description: |-
+    ## Описание
+    Интеграция позволяет получать и отправлять документы из СЭД Дело в СЭД Тезис и обратно.
+    
+    - **СЭД Тезис** - система электронного документооборота. Используется администрацией г. Б.
+    - **СЭД Дело-WEB** - система электронного документооборота. Используется администрацией г. И.
+    
+    Интеграция разработана со стороны СЭД Тезис и в дальнейшем интеграцию можно расширить\настроить 
+    при изменении API СЭД Дело.
+    
+    ### Функции интеграции
+    0. Создание входящего документа в СЭД Тезис.
+    0. Отправка файлов в карточку документа СЭД Тезис.
+    0. Отправка исходящего документа в СЭД Дело (кнопка "Отправить в Дело-WEB" в исх. документ).
+    
+    ### Логика взаимодействия двух организаций
+    Интеграция обеспечивает **переписку** двух организаций. Т. е. для организации-отправителя документ **исходящий**, 
+    а для второй организации (организация-получатель) документ **входящий**. 
+    
+    При отправке исходящего документа из Тезис в Дело создается входящий документ.
+    
+    При отправке исходящего документа из Дело, в Тезис создается входящий.
+    
+    **Схематично это выглядит так:**
+    
+    - Исходящий документ в Тезис = Входящий документ в Дело
+    - Исходящий документ в Дело = Входящий документ в Тезис  
+    
+    Для этой логики есть таблицы с соотношением полей (см. ниже).
+    
+    #### Соотношения полей из СЭД Тезис (исходящий документ) в СЭД Дело (входящий документ)
+    | Тезис| Дело|Название поля в схеме (DTO)|
+    |-|-|-|
+    |Содержание|Содержание|content|
+    |Адресат - Кому|Адресат|addressesUser|
+    |Вложения|Вложения|deloFileDtoList|
+    |Утверждающий |Подписал|signedBy|
+    |Ввел данные (Исполнитель) |Исполнитель|owner|
+    
+    #### Соотношения полей из СЭД Дело (исходящий документ) в СЭД Тезис (входящий документ)
+    | Дело| Тезис|Название поля в схеме (DTO)|
+    |-|-|-|
+    |Содержание|Содержание|content|
+    |Рег. номер|Исходящий номер|regNo|
+    |От|От|regDate|
+    |Адресат|Орган-получатель|addressee|
+    |Корреспондент|Отправитель|correspondent|
+    |Подписал|Подписал|subscriber|
+    
+    ### Конфигурационный файл для настройки интеграции
+    В работе интеграции с «Дело-WEB» присутствует конфигурационный файл delo.properties.
+    Файл служит для удобной настройки API Дело в СЭД Тезис.
+    
+    Конфигурационный файл должен находиться по пути `opt/haulmont/tomcat/conf`
+    
+    #### Содержание конфигурационного файла:
+    - `delo.api-url-send` - ссылка, для отправки документов из СЭД  Тезис в Дело.
+    
+    - `delo.api-url-get` - ссылка, для получения документов из Дело в СЭД Тезис.
+    - `delo.api-key` - API ключ, для использования REST Дело Web.
+    - `enabled` - режим работы (true-вкл/ false-выкл).
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/app-portal/api
+    description: Локальный сервер
+  - url: https://tezis-test.mcs.br/app-portal/api
+    description: Тестовый сервер Б
+  - url: https://tezis.mcs.br/app-portal/api
+    description: Продуктовый сервер Б (осторожно с созданием!)
+paths:
+  /login:
+    get:
+      summary: Авторизация (получение токена)
+      operationId: login
+      parameters:
+        - name: u
+          in: query
+          required: true
+          description: Логин пользователя Тезис
+          example: admin
+          schema:
+            type: string
+        - name: p
+          in: query
+          required: true
+          example: admin
+          description: Пароль пользователя Тезис
+          schema:
+            type: string
+        - name: l
+          in: query
+          description: Локаль пользователя
+          example: ru
+          schema:
+            type: string
+
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+                example: 6ee3dac2-e600-5720-4255-78f704b9845b
+        401:
+          description: Авторизация не удалась (Unauthorized)
+        500:
+          description: Ошибки в работе модуля portal или в проекте расширения
+
+  /logout:
+    get:
+      summary: Завершение сессии
+      parameters:
+        - name: session
+          in: query
+          required: true
+          description: Текущий токен авторизации
+          example: admin
+          schema:
+            type: string
+
+      responses:
+        200:
+          description: OK
+
+  /add:
+    post:
+      summary: Создание документа в СЭД Тезис
+      description: В Тезис создается карточка вх. документа по шаблону *"Для интеграции"* и запускается процесс регистрации. Карточка попадает в папку **"Рассмотрение входящих"**.
+      parameters:
+        - name: s
+          in: query
+          required: true
+          description: Текущий токен авторизации
+          example: 6ee3dac2-e600-5720-4255-78f704b9845b
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DocTezis'
+      responses:
+        200:
+          description: OK
+  /addFile:
+    post:
+      summary: Добавление файла-вложения в документ СЭД Тезис по рег. номеру
+      description: Для прикрепления файлов-вложений в уже созданную карточку документа.
+      parameters:
+        - name: s
+          in: query
+          required: true
+          description: Текущий токен авторизации
+          example: 6ee3dac2-e600-5720-4255-78f704b9845b
+          schema:
+            type: string
+        - name: name
+          in: query
+          required: true
+          description: Название файла
+          example: Скан письма.pdf
+          schema:
+            type: string
+        - name: ext
+          in: query
+          required: true
+          description: Тип файла
+          example: pdf
+          schema:
+            type: string
+        - name: regNo
+          in: query
+          required: true
+          description: Рег. номер документа, к которому необходимо добавить файл вложения
+          example: Вх-123\2024
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/File'
+      responses:
+        200:
+          description: OK
+components:
+  schemas:
+    DocTezis:
+      type: object
+      properties:
+        content:
+          type: string
+          description: Содержание документа
+          example: Письмо о предоставлении информации о исполнении поручений
+        regNo:
+          type: string
+          description: Регистрационный номер документа (исходящий номер в СЭД Тезис)
+          example: Вх-123/2024
+        regDate:
+          type: string
+          description: Дата регистрации документа (поле "От" в СЭД Тезис\СЭД Дело)
+          example: 2023-09-29T15:30:00
+        addressee:
+          type: string
+          description: Адресат (Дело) или Орган-получатель (Тезис)
+          example: Мэр города Б
+        correspondent:
+          type: string
+          description: Отправитель документа (Корреспнодент в Дело).
+          example: En+
+        correspondentType:
+          type: string
+          description: Тип отправителя - ЮЛ (юридическое лицо) или ФЛ (физическое лицо)
+          example: ЮЛ
+        subscriber:
+          type: string
+          description: Кто подписал документ (поле "Подписал")
+          example: Иванов Иван Иванович
+    DocDelo:
+      type: object
+      properties:
+        content:
+          type: string
+          description: Содержание документа
+          example: Письмо о предоставлении информации о исполнении поручений
+        addressesUser:
+          type: string
+          description: Адресат (В тезис Адресат - Кому)
+          example:
+        deloFileDtoList:
+          type: string
+          description: Вложения
+        signedBy:
+          type: string
+          description: Подписал в Дело или Утверждающий в Тезис
+          example: Петр Петров Петрович
+        owner:
+          type: string
+          description: Ввел данные (Исполнитель) в Тезис или Исполнитель (Дело)
+          example: Иванов Иван Иванович
+    File:
+      type: object
+      properties:
+        file:
+          type: file_binary
+      xml:
+        name: '##default'
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
