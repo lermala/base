@@ -2,7 +2,7 @@
 title:  Примеры презентаций
 draft: true
 # hidden: true
-# draft: true
+draft: true
 ---
 
 ## Основы REST API
