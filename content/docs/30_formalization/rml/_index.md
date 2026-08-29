@@ -82,7 +82,7 @@ flowchart TD
   click G1 "/models/goals/business-objectives" _blank
   click S3 "/docs/30_formalization/uml/" _blank
 ```
-
+<!-- 
 {{< callout >}}
   Если блок подчеркнут, то **это ссылка**. Кликаем на него для подробной инфо.
-{{< /callout >}}
+{{< /callout >}} -->

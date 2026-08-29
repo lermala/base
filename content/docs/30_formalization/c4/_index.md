@@ -11,13 +11,17 @@ weight: 30
 - Тоже описание С4 с разбором каждого уровня на примере Системы заказа лекарств. Также есть практические рекомендации по работе с С4 [Хабр / Как описать большую систему в нотации С4](https://habr.com/ru/companies/nspk/articles/679426)
 - Нотация С4 (рекомендации построения на англ.) [c4model.com](https://c4model.com/diagrams/notation)
 - Тут кратенько по каждому уровню с примером [Описание архитектуры системы с помощью C4 model](https://bool.dev/blog/detail/c4-model-architecture)
-- Документация по построению C4 в PlantUML [github / C4-PlantUML](https://github.com/plantuml-stdlib/C4-PlantUML)
 - Тут можно пошагово посмотреть построение С4 на примере MSA [Проектирование микросервисной EDA-архитектуры в icepanel.io](https://babok-school.ru/blog/microservices-patterns-and-c4-diagrams-example)
 
 Примеры:
 - Интерактивный пример C4 [Internet Banking System (c4model.com)](https://c4model.com/example/#SystemContext)
 - Интерактивный пример C4 [Status Dashboard](https://viewer.diagrams.net/index.html?lightbox=1&highlight=0000ff&edit=_blank&layers=1&page=1&nav=1&title=#Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fjgraph%2Fdrawio-diagrams%2Fmaster%2Fblog%2FC4.drawio#%7B%22pageId%22%3A%22zNMGI6wU0Mi8Qe2H5Q59%22%7D)
 - Примеры и шаблоны [диаграмм C4 в PlantUML](https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/samples/C4CoreDiagrams.md)
+
+Где рисовать:
+- [LikeC4](https://likec4.dev)
+- [draw.io](https://app.diagrams.net) (тут нужно добавить раздел C4 через `+ More Shapes`)
+- PlantUML (см. [Документация по построению C4 в PlantUML](https://github.com/plantuml-stdlib/C4-PlantUML))
 
 ## Определение
 

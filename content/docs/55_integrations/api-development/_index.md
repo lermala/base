@@ -33,6 +33,23 @@ weight: 500
 - Swagger-ui
 - Форматтер-валидатор JSON [jsonformatter](https://jsonformatter.org/)
 
+Что должен описать системный аналитик при проектировании API?
+- endpoint;
+- HTTP method;
+- назначение операции;
+- path/query parameters;
+- request headers;
+- request body;
+- типы и обязательность полей;
+- валидации;
+- response;
+- HTTP status codes;
+- ошибки;
+- авторизацию;
+- примеры;
+- ограничения;
+- требования к идемпотентности.
+
 ## Термины
 
 ### Состав API
